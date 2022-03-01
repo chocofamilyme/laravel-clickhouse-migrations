@@ -12,14 +12,14 @@ final class ClickHouseProvider extends ServiceProvider
     public function register(): void
     {
         $client = (new Client([
-            'host' => config('database.connections.clickhouse.host'),
-            'port' => config('database.connections.clickhouse.port'),
-            'username' => config('database.connections.clickhouse.username'),
-            'password' => config('database.connections.clickhouse.password'),
-        ]))->database(config('database.connections.clickhouse.options.database'));
+            'host' => config('clickhouse.host', 'localhost'),
+            'port' => config('clickhouse.port', '8123'),
+            'username' => config('clickhouse.username', 'username'),
+            'password' => config('clickhouse.password', ''),
+        ]))->database(config('clickhouse.database', 'laravel'));
 
-        $client->setTimeout(config('database.connections.clickhouse.options.timeout'));
-        $client->setConnectTimeOut(config('database.connections.clickhouse.options.connectTimeOut'));
+        $client->setTimeout(config('clickhouse.options.timeout', 10));
+        $client->setConnectTimeOut(config('clickhouse.options.connect_timeout', 10));
 
         $this->app->instance(Client::class, $client);
     }

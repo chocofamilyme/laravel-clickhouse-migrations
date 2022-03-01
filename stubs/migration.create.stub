@@ -12,6 +12,7 @@ class {{ class }} extends AbstractMigration
                 created_at DateTime DEFAULT now()
             )
             ENGINE = MergeTree()
+            ORDER BY created_at
         ");
     }
 
