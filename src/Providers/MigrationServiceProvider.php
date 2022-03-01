@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Chocofamilyme\LaravelClickHouse\Migrations\Providers;
 
-use App\Infrastructure\ClickHouse\ClickHouseMigrationRepository;
-use App\Infrastructure\ClickHouse\Migrator;
+use Chocofamilyme\LaravelClickHouse\Migrations\ClickHouseMigrationRepository;
+use Chocofamilyme\LaravelClickHouse\Migrations\Migrator;
 use ClickHouseDB\Client;
 use Illuminate\Contracts\Support\DeferrableProvider;
 
