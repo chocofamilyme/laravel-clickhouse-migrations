@@ -1,0 +1,16 @@
+<?php
+
+use Chocofamilyme\LaravelClickHouse\Migrations\AbstractMigration;
+
+class {{ class }} extends AbstractMigration
+{
+    public function up(): void
+    {
+        //
+    }
+
+    public function down(): void
+    {
+        //
+    }
+}

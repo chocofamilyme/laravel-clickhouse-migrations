@@ -1,0 +1,22 @@
+<?php
+
+use Chocofamilyme\LaravelClickHouse\Migrations\AbstractMigration;
+
+class {{ class }} extends AbstractMigration
+{
+    public function up(): void
+    {
+        $this->getConnection()->write("
+            CREATE TABLE IF NOT EXISTS {{ table }} (
+                id UUID,
+                created_at DateTime DEFAULT now()
+            )
+            ENGINE = MergeTree()
+        ");
+    }
+
+    public function down(): void
+    {
+        $this->getConnection()->write("DROP TABLE IF EXISTS {{ table }}");
+    }
+}

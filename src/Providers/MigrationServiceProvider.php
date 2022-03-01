@@ -28,4 +28,11 @@ final class MigrationServiceProvider extends \Illuminate\Database\MigrationServi
             return new Migrator($repository, $app['db'], $app['files'], $app['events']);
         });
     }
+
+    private function publishStubs(): void
+    {
+        $this->publishes([
+            __DIR__."/../../stubs" => base_path('stubs'),
+        ], 'chocofamily-laravel-clickhouse-migrations-stubs');
+    }
 }
