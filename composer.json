@@ -1,8 +1,7 @@
 {
-  "name": "chocofamilyme/laravel-clickhouse-migrations",
+  "name": "yuriykim/laravel-clickhouse-migrations",
   "description": "Clickhouse migrations based on Laravel migrations",
   "type": "library",
-  "version": "1.0",
   "require": {
     "php": "^8.0",
     "smi2/phpclickhouse": "^1.4"
