@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 namespace Chocofamilyme\LaravelClickHouse\Migrations\Providers;
+
 use Chocofamilyme\LaravelClickHouse\Migrations\Console\ClickHouseFresh;
 use Chocofamilyme\LaravelClickHouse\Migrations\Console\ClickHouseMigrate;
 use Chocofamilyme\LaravelClickHouse\Migrations\Console\ClickHouseRollback;
@@ -22,6 +23,6 @@ final class AssetsServiceProvider extends ServiceProvider
         $this->publishes([
             __DIR__."/../../config/clickhouse.php" => config_path('clickhouse.php'),
             __DIR__."/../../stubs" => base_path('stubs'),
-        ], 'clickhouse');
+        ], 'laravel-assets');
     }
 }

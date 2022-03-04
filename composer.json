@@ -1,6 +1,10 @@
 {
-  "name": "yuriykim/laravel-clickhouse-migrations",
-  "description": "Clickhouse migrations based on Laravel migrations",
+  "name": "chocofamilyme/laravel-clickhouse-migrations",
+  "description": "Clickhouse migrations based on Laravel migrations and smi2/phpclickhouse",
+  "keywords": [
+    "laravel",
+    "clickhouse"
+  ],
   "type": "library",
   "require": {
     "php": "^8.0",
@@ -17,11 +21,17 @@
   "license": "MIT",
   "authors": [
     {
-      "name": "yuriy kim",
-      "email": "kim.yu@rahmetapp.kz",
-      "role": "Backend Software Engineer"
+      "name": "IT Chocolife.me",
+      "homepage": "https://chocolife.me"
     }
   ],
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Chocofamilyme\\LaravelClickHouse\\Migrations\\Providers\\ClickHouseMigrationsServiceProvider"
+      ]
+    }
+  },
   "scripts": {
     "format": "vendor/bin/php-cs-fixer fix --allow-risky=yes --config=.php_cs.dist.php"
   }
