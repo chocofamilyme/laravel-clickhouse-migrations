@@ -18,7 +18,9 @@ final class ClickHouseMigrationRepository implements MigrationRepositoryInterfac
      */
     public function getRan(): array
     {
-        return $this->client->select('SELECT migration, batch FROM migrations')->rows();
+        $ranMigrations = $this->client->select('SELECT migration FROM migrations')->rows();
+
+        return collect($ranMigrations)->pluck('migration')->toArray();
     }
 
     /**
